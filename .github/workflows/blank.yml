@@ -1,27 +1,26 @@
-name: Meu primeiro WorkFlow no GitHub Actions
+#Definindo o Nome do workflow
+name: Test WorkFlow
 
-# Controls when the workflow will run
+#Definindo quando o workflow sera disparado
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+   push:
+      branches: [main,developer]
+      
+#Definindo os jobs que o workflow executará
 jobs:
- job01:
-    runs-on: ubuntu-latest  
-    steps:    
-      - uses: actions/checkout@v4   
-      - name: Run a one-line script
-        run: echo Hello, world!
+  test_job:
+    name: Executando o Job de Teste
+    runs-on: self-hosted
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+    steps:
+      - name: Step 1
+        uses: actions/checkout@v2
+
+      - name: Step 2
+        run: echo "Olá, mundo! Este é o nosso primeiro job na GitHub Actions!"
+          
+      - name: Step 3
+        run: echo Olá, mundo! Esta é o Step 3
+
+      - name: Step 4
+        run: echo Olá, mundo! Esta é o Step 4
