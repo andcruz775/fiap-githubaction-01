@@ -1,26 +1,30 @@
-#Definindo o Nome do workflow
+# Definindo o Nome do workflow
 name: Test WorkFlow
 
-#Definindo quando o workflow sera disparado
+# Definindo quando o workflow sera disparado
 on:
   push:
-    branches: [main,developer]
-      
-#Definindo os jobs que o workflow executará
+    branches: [main, developer ]
+       
+# Definindo os jobs que o workflow executará
 jobs:
   test_job:
     name: Executando o Job de Teste
     runs-on: self-hosted
 
     steps:
-      - name: Step 1
-        uses: actions/checkout@v2
+     - name: Step 1
+       uses: actions/checkout@v2
 
-      - name: Step 2
-        run: echo "Olá, mundo! Este é o nosso primeiro job na GitHub Actions!"
+     - name: Step 2
+       run: echo "Ola mundo"
+
+     - name: Step 3
+       run: echo "este é o passo 3"
+
+     - name: Step 4
+       run: echo "este é o passo 4"
           
-      - name: Step 3
-        run: echo "Olá, mundo! Esta é o Step 3"
+   
 
-      - name: Step 4
-        run: echo "Olá, mundo! Esta é o Step 4"
+     
