@@ -3,8 +3,8 @@ name: Test WorkFlow
 
 #Definindo quando o workflow sera disparado
 on:
-   push:
-      branches: [main,developer]
+  push:
+    branches: [main,developer]
       
 #Definindo os jobs que o workflow executará
 jobs:
@@ -20,7 +20,7 @@ jobs:
         run: echo "Olá, mundo! Este é o nosso primeiro job na GitHub Actions!"
           
       - name: Step 3
-        run: echo Olá, mundo! Esta é o Step 3
+        run: echo "Olá, mundo! Esta é o Step 3"
 
       - name: Step 4
-        run: echo Olá, mundo! Esta é o Step 4
+        run: echo "Olá, mundo! Esta é o Step 4"
